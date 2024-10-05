@@ -6,6 +6,7 @@ import {
 } from "react-native";
 import { Image, Box, Text, VStack } from "@gluestack-ui/themed";
 import React from "react";
+import LottieView from "lottie-react-native";
 import { useNavigation } from "@react-navigation/native";
 
 interface LevelInfo {
@@ -29,17 +30,23 @@ const Quizz = () => {
       gap={"$12"}
       px={"$8"}
       py={"$4"}
-      justifyContent="space-between"
+      justifyContent="flex-start"
       bg="$white"
     >
-      {Platform.OS == "android" && <StatusBar barStyle="light-content" />}
-      <Image
-        source={require("../../assets/question_logo.png")}
-        w="$full"
-        height={200}
-        resizeMode="contain"
-        alt="logo"
+      <StatusBar barStyle="light-content" />
+      <LottieView
+        source={{
+          uri: "https://lottie.host/3a9d32e0-9441-44e8-940a-083bd45715a0/EyDIWu7WEO.json",
+        }}
+        autoPlay
+        loop
+        style={{ width: "100%", height: 300 }}
       />
+      <Box>
+        <Text textAlign="center" fontSize={"$sm"} color="$coolGray500">
+          Lựa chọn mức độ câu hỏi
+        </Text>
+      </Box>
       <VStack gap={"$6"}>
         {levels.map((info, index) => (
           <TouchableOpacity
@@ -55,6 +62,7 @@ const Quizz = () => {
               alignItems="center"
               rounded={"$lg"}
             >
+              
               <Text fontWeight="$semibold" color="$white" fontSize={"$2xl"}>
                 {info.text}
               </Text>
@@ -62,11 +70,6 @@ const Quizz = () => {
           </TouchableOpacity>
         ))}
       </VStack>
-      <Box>
-        <Text textAlign="center" fontSize={"$sm"} color="$coolGray500">
-          Lựa chọn mức độ câu hỏi
-        </Text>
-      </Box>
     </VStack>
   );
 };

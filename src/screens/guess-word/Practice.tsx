@@ -39,6 +39,11 @@ const Practice = () => {
         resizeMode="contain"
         alt="logo"
       />
+      <Box>
+        <Text textAlign="center" fontSize={"$sm"} color="$coolGray500">
+          Lựa chọn mức độ câu hỏi
+        </Text>
+      </Box>
       <VStack gap={"$6"}>
         {levels.map((info, index) => (
           <TouchableOpacity
@@ -61,11 +66,6 @@ const Practice = () => {
           </TouchableOpacity>
         ))}
       </VStack>
-      <Box>
-        <Text textAlign="center" fontSize={"$sm"} color="$coolGray500">
-          Lựa chọn mức độ câu hỏi
-        </Text>
-      </Box>
     </VStack>
   );
 };

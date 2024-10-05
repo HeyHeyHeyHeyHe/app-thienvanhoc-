@@ -79,28 +79,6 @@ const QuizzResult = () => {
           <Text color="$white">Tiếp tục học</Text>
         </Box>
       </TouchableOpacity>
-      {/* 
-      <Box>
-        <View style={styles.box__score}>
-          <View style={[styles.ques, styles.ques__total]}>
-            <Text style={styles.ques__num}>{route.params.length}</Text>
-            <Text>question</Text>
-          </View>
-          <View style={[styles.ques, styles.ques__true]}>
-            <Text style={[styles.ques__num, styles.text__white]}>
-              {route.params.point}
-            </Text>
-            <Text style={styles.text__white}>true</Text>
-          </View>
-          <View style={[styles.ques, styles.ques__false]}>
-            <Text style={[styles.ques__num, styles.text__white]}>
-              {route.params.length - route.params.point}
-            </Text>
-            <Text style={styles.text__white}>false</Text>
-          </View>
-        </View>
-
-      </Box> */}
     </VStack>
   );
 };
